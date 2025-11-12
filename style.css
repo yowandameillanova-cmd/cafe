@@ -1,0 +1,226 @@
+/* == STYLING GLOBAL / DASAR == */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Membuat padding tidak menambah ukuran elemen */
+    outline: none;
+    border: none;
+    text-decoration: none; /* Menghapus garis bawah dari link */
+}
+
+/* Menggunakan font Poppins yang tadi di-import di HTML */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9; /* Warna latar belakang netral */
+    color: #333; /* Warna teks utama */
+}
+
+/* == BAGIAN HEADER & NAVIGASI == */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, navigasi di kanan */
+    align-items: center;
+    padding: 1.4rem 7%; /* Padding atas/bawah 1.4rem, kiri/kanan 7% */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed; /* Membuat navbar tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; /* Memastikan navbar selalu di paling depan */
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem; /* Ukuran font logo */
+    font-weight: 600;
+    color: #333;
+}
+
+/* Memberi warna khusus pada kata 'Kita' */
+.navbar .navbar-logo span {
+    color: #a8763e; /* Warna coklat kopi */
+}
+
+.navbar .navbar-nav a {
+    font-size: 1rem;
+    color: #555;
+    display: inline-block;
+    margin: 0 1rem; /* Jarak antar link navigasi */
+    font-weight: 400;
+}
+
+/* Efek hover pada link navigasi */
+.navbar .navbar-nav a:hover {
+    color: #a8763e;
+}
+
+/* == BAGIAN HERO (SALAM PEMBUKA) == */
+.hero {
+    min-height: 100vh; /* Tinggi minimal 1 layar penuh */
+    display: flex;
+    align-items: center;
+    
+    /* Ganti dengan path gambar Anda */
+    background-image: url('images/hero-background.jpg'); 
+    background-color: #555; /* Warna cadangan jika gambar gagal dimuat */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    padding-top: 80px; /* Memberi jarak agar tidak tertutup navbar */
+}
+
+.hero .hero-content {
+    text-align: center;
+    padding: 1.4rem 7%;
+    max-width: 600px; /* Lebar maksimum konten */
+    margin: auto; /* Pusatkan konten */
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay gelap agar teks terbaca */
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.hero .hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero .hero-content .cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #a8763e;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-content .cta-button:hover {
+    background-color: #8c6232;
+}
+
+/* == STYLING UMUM UNTUK SECTION == */
+/* Memberi jarak untuk semua section agar tidak terlalu mepet */
+.tentang-kami,
+.menu,
+.kontak {
+    padding: 6rem 7% 1.4rem; /* Padding atas lebih besar karena ada navbar */
+}
+
+/* Styling judul di setiap section */
+.tentang-kami h2,
+.menu h2,
+.kontak h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #a8763e;
+}
+
+/* == BAGIAN TENTANG KAMI == */
+.tentang-kami .tentang-content {
+    display: flex;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    align-items: center;
+    gap: 2rem; /* Jarak antara teks dan gambar */
+}
+
+.tentang-kami .tentang-content .tentang-teks {
+    flex: 1 1 30rem; /* Flex-grow, flex-shrink, basis */
+}
+
+.tentang-kami .tentang-content .tentang-teks p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tentang-kami .tentang-content .tentang-gambar {
+    flex: 1 1 25rem;
+}
+
+.tentang-kami .tentang-content .tentang-gambar img {
+    width: 100%; /* Membuat gambar responsif */
+    border-radius: 8px;
+}
+
+/* == BAGIAN MENU == */
+.menu .menu-grid {
+    display: grid;
+    /* Membuat 3 kolom di layar besar, 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Jarak antar item menu */
+}
+
+.menu .menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 1.5rem;
+    overflow: hidden; /* Agar gambar tidak keluar dari border-radius */
+}
+
+.menu .menu-item img {
+    width: 100%;
+    height: 200px; /* Tinggi gambar dibuat seragam */
+    object-fit: cover; /* Memastikan gambar terisi penuh tanpa distorsi */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.menu .menu-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu .menu-item p {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* == BAGIAN KONTAK == */
+.kontak {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.kontak .info-kontak {
+    margin-top: 2rem;
+}
+
+.kontak .info-kontak p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* == BAGIAN FOOTER == */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 7%;
+    margin-top: 3rem;
+}
+
+footer .social-media {
+    margin-top: 1rem;
+}
+
+footer .social-media a {
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+footer .social-media a:hover {
+    color: #a8763e;
+}
